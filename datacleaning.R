@@ -9,11 +9,11 @@ library(qwraps2)
 library(tidyr)
 library(shinythemes)
 file.name<-"Maquines"
-Schau<-read_xlsx(paste0(here::here(),"/ShinyApp/Data/",file.name,".xlsx"),sheet = "TOTAL Schauer")
-Nedap<-read_xlsx(paste0(here::here(),"/ShinyApp/Data/",file.name,".xlsx"),sheet = "TOTAL Nedap")
-Exafan<-read_xlsx(paste0(here::here(),"/ShinyApp/Data/",file.name,".xlsx"),sheet = "Consum TOTAL EXAFAN")
-Rotec<-read_xlsx(paste0(here::here(),"/ShinyApp/Data/",file.name,".xlsx"),sheet = "Consumo TOTAL Rotecna")
-Exafan.peso<-read_xlsx(paste0(here::here(),"/ShinyApp/Data/",file.name,".xlsx"),sheet = "Peso TOTAL EXAFAN")
+Schau<-read_xlsx(paste0(here::here(),"/Data/",file.name,".xlsx"),sheet = "TOTAL Schauer")
+Nedap<-read_xlsx(paste0(here::here(),"/Data/",file.name,".xlsx"),sheet = "TOTAL Nedap")
+Exafan<-read_xlsx(paste0(here::here(),"/Data/",file.name,".xlsx"),sheet = "Consum TOTAL EXAFAN")
+Rotec<-read_xlsx(paste0(here::here(),"/Data/",file.name,".xlsx"),sheet = "Consumo TOTAL Rotecna")
+Exafan.peso<-read_xlsx(paste0(here::here(),"/Data/",file.name,".xlsx"),sheet = "Peso TOTAL EXAFAN")
 
 Schau<-Schau[!is.na(Schau$`Transponder-UID`),]
 if("...8" %in% colnames(Schau)){
@@ -153,4 +153,5 @@ fin$GMD<-fin$GMD*1000
 fin$VS<-fin$VS*1000
 fin$MS<-fin$MS*1000
 fin$FR<-fin$FR*1000
+write.csv2(fin,"clean_data.csv")
 
