@@ -3,7 +3,7 @@
 
 En aquest projecte es troba el arxius per fer servir la shinyApp.
 - El fitxer datacleaning.R amb els càlculs necesaris i transformacions del dataset.
-- 
+  
 A la carpeta Shiny App hi ha:
 - L'arxiu app.R amb tots la ShinyApp amb les aprts de server i UI.
 - La carpeta www es troben les imatges.
